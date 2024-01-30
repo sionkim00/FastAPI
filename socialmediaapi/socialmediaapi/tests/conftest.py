@@ -13,10 +13,12 @@ def anyio_backend():
     return "asyncio"
 
 
+@pytest.fixture()
 def client() -> Generator:
     yield TestClient(app)
 
 
+# Runs every test iteration
 @pytest.fixture(autouse=True)
 async def db() -> Generator:
     post_table.clear()

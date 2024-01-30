@@ -4,4 +4,4 @@
 
 - pip install -r requirements.txt
 - pip install -r requirements-dev.txt
-- uvicorn main:app --reload
+- uvicorn socialmediaapi.main:app --reload
