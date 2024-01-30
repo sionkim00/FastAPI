@@ -55,4 +55,7 @@ async def get_post_with_comments(post_id: int):
     if not post:
         raise fastapi.HTTPException(status_code=404, detail="Post not found")
 
-    return {"post": post, "comments": await get_comments_on_post(post_id)}
+    return {
+        "post": post,
+        "comments": await get_comments_on_post(post_id),
+    }
