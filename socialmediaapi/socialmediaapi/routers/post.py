@@ -1,6 +1,6 @@
 import fastapi
 
-from models import post
+from socialmediaapi.models import post
 
 router = fastapi.APIRouter()
 
