@@ -1,0 +1,106 @@
+2024-01-31 15:02:52.449z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:02:52.451z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:03:52.993z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:03:53.098z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:03:53.101z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:03:53.103z | INFO     | uvicorn.error:87 - Finished server process [55028]
+2024-01-31 15:03:53.657z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:03:53.658z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:03:58.462z | INFO     | uvicorn.access:489 - 127.0.0.1:58378 - "GET / HTTP/1.1" 404
+2024-01-31 15:04:41.107z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:04:41.210z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:04:41.211z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:04:41.212z | INFO     | uvicorn.error:87 - Finished server process [56081]
+2024-01-31 15:04:41.742z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:04:41.744z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:04:47.415z | INFO     | uvicorn.access:489 - 127.0.0.1:58395 - "GET / HTTP/1.1" 404
+2024-01-31 15:07:35.310z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:07:35.417z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:07:35.421z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:07:35.423z | INFO     | uvicorn.error:87 - Finished server process [56257]
+2024-01-31 15:07:37.165z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:07:37.167z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:07:55.069z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:07:55.174z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:07:55.177z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:07:55.178z | INFO     | uvicorn.error:87 - Finished server process [56941]
+2024-01-31 15:07:55.728z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:07:55.730z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:07:58.493z | INFO     | uvicorn.access:489 - 127.0.0.1:58532 - "GET / HTTP/1.1" 404
+2024-01-31 15:08:07.101z | INFO     | socialmediaapi.routers.post:29 - Getting all posts
+2024-01-31 15:08:07.104z | DEBUG    | socialmediaapi.routers.post:31 - SELECT posts.id, posts.body 
+FROM posts
+2024-01-31 15:08:07.112z | INFO     | uvicorn.access:489 - 127.0.0.1:58541 - "GET /post HTTP/1.1" 200
+2024-01-31 15:10:51.786z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:10:51.893z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:10:51.896z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:10:51.897z | INFO     | uvicorn.error:87 - Finished server process [57022]
+2024-01-31 15:10:52.478z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:10:52.480z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:10:59.867z | INFO     | socialmediaapi.routers.post:14 - Finding post with id 0
+2024-01-31 15:10:59.871z | DEBUG    | socialmediaapi.routers.post:16 - SELECT posts.id, posts.body 
+FROM posts 
+WHERE posts.id = :id_1
+2024-01-31 15:10:59.878z | INFO     | uvicorn.access:489 - 127.0.0.1:58784 - "GET /post/0 HTTP/1.1" 404
+2024-01-31 15:12:55.469z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:12:55.576z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:12:55.578z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:12:55.579z | INFO     | uvicorn.error:87 - Finished server process [58507]
+2024-01-31 15:12:56.170z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:12:56.172z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:13:01.530z | INFO     | socialmediaapi.routers.post:38 - Creating comment
+2024-01-31 15:13:01.533z | INFO     | socialmediaapi.routers.post:14 - Finding post with id 0
+2024-01-31 15:13:01.536z | DEBUG    | socialmediaapi.routers.post:16 - SELECT posts.id, posts.body 
+FROM posts 
+WHERE posts.id = :id_1
+2024-01-31 15:13:01.542z | ERROR    | socialmediaapi.routers.post:42 - post with id 0 not found
+2024-01-31 15:13:01.545z | INFO     | uvicorn.access:489 - 127.0.0.1:58897 - "POST /comment HTTP/1.1" 404
+2024-01-31 15:13:31.044z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:13:31.152z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:13:31.156z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:13:31.157z | INFO     | uvicorn.error:87 - Finished server process [59293]
+2024-01-31 15:13:31.735z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:13:31.737z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:13:39.824z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:13:39.927z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:13:39.929z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:13:39.930z | INFO     | uvicorn.error:87 - Finished server process [59528]
+2024-01-31 15:13:40.545z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:13:40.547z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:14:00.052z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:14:00.161z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:14:00.164z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:14:00.166z | INFO     | uvicorn.error:87 - Finished server process [59580]
+2024-01-31 15:14:00.703z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:14:00.705z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:14:20.314z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:14:20.419z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:14:20.420z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:14:20.421z | INFO     | uvicorn.error:87 - Finished server process [59655]
+2024-01-31 15:14:21.003z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:14:21.005z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:14:48.587z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:14:48.693z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:14:48.694z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:14:48.695z | INFO     | uvicorn.error:87 - Finished server process [59741]
+2024-01-31 15:14:49.208z | INFO     | socialmediaapi.main:17 - Starting FastAPI
+2024-01-31 15:14:49.210z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:14:55.423z | INFO     | socialmediaapi.routers.post:22 - Creating post
+2024-01-31 15:14:55.427z | DEBUG    | socialmediaapi.routers.post:25 - INSERT INTO posts (body) VALUES (:body)
+2024-01-31 15:14:55.435z | INFO     | uvicorn.access:489 - 127.0.0.1:58934 - "POST /post HTTP/1.1" 201
+2024-01-31 15:15:00.851z | INFO     | socialmediaapi.routers.post:40 - Creating comment
+2024-01-31 15:15:00.852z | INFO     | socialmediaapi.routers.post:14 - Finding post with id 1
+2024-01-31 15:15:00.855z | DEBUG    | socialmediaapi.routers.post:16 - SELECT posts.id, posts.body 
+FROM posts 
+WHERE posts.id = :id_1
+2024-01-31 15:15:00.867z | INFO     | uvicorn.access:489 - 127.0.0.1:58937 - "POST /comment HTTP/1.1" 201
+2024-01-31 15:15:03.130z | INFO     | socialmediaapi.routers.post:56 - Getting comments on post
+2024-01-31 15:15:03.133z | DEBUG    | socialmediaapi.routers.post:58 - SELECT comments.id, comments.body, comments.post_id 
+FROM comments 
+WHERE comments.post_id = :post_id_1
+2024-01-31 15:15:03.137z | INFO     | uvicorn.access:489 - 127.0.0.1:58937 - "GET /post/0/comment HTTP/1.1" 200
+2024-01-31 15:15:10.911z | INFO     | socialmediaapi.routers.post:56 - Getting comments on post
+2024-01-31 15:15:10.914z | DEBUG    | socialmediaapi.routers.post:58 - SELECT comments.id, comments.body, comments.post_id 
+FROM comments 
+WHERE comments.post_id = :post_id_1
+2024-01-31 15:15:10.925z | INFO     | uvicorn.access:489 - 127.0.0.1:58944 - "GET /post/1/comment HTTP/1.1" 200
