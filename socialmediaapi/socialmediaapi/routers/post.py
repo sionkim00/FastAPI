@@ -37,8 +37,6 @@ async def get_all_posts():
 
 @router.post("/comment", response_model=post.Comment, status_code=201)
 async def create_comment(comment: post.CommentIn):
-    logger.info("Creating comment")
-
     post = await find_post(comment.post_id)
     if not post:
         raise fastapi.HTTPException(status_code=404, detail="Post not found")
