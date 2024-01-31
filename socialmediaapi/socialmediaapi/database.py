@@ -1,9 +1,25 @@
 import databases
 import sqlalchemy
-from config import config
+
+from socialmediaapi.config import config
 
 # Store information about tables & columns
 metadata = sqlalchemy.MetaData()
+
+post_table = sqlalchemy.Table(
+    "posts",
+    metadata,  # Link metadata
+    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("body", sqlalchemy.String),
+)
+
+comment_table = sqlalchemy.Table(
+    "comments",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("body", sqlalchemy.String),
+    sqlalchemy.Column("post_id", sqlalchemy.ForeignKey("posts.id"), nullable=False),
+)
 
 # Allow sqlalchemy to connect to sqlite
 engine = sqlalchemy.create_engine(
