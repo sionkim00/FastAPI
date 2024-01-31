@@ -104,3 +104,114 @@ WHERE comments.post_id = :post_id_1
 FROM comments 
 WHERE comments.post_id = :post_id_1
 2024-01-31 15:15:10.925z | INFO     | uvicorn.access:489 - 127.0.0.1:58944 - "GET /post/1/comment HTTP/1.1" 200
+2024-01-31 15:38:13.982z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:38:14.091z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:38:14.094z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:38:14.096z | INFO     | uvicorn.error:87 - Finished server process [59832]
+2024-01-31 15:38:14.776z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:38:17.709z | INFO     | socialmediaapi.routers.post:32 - Getting all posts
+2024-01-31 15:38:17.713z | DEBUG    | socialmediaapi.routers.post:34 - SELECT posts.id, posts.body 
+FROM posts
+2024-01-31 15:38:17.722z | INFO     | uvicorn.access:489 - 127.0.0.1:60669 - "GET /post HTTP/1.1" 200
+2024-01-31 15:38:23.020z | INFO     | socialmediaapi.routers.post:56 - Getting comments on post
+2024-01-31 15:38:23.022z | DEBUG    | socialmediaapi.routers.post:58 - SELECT comments.id, comments.body, comments.post_id 
+FROM comments 
+WHERE comments.post_id = :post_id_1
+2024-01-31 15:38:23.030z | INFO     | uvicorn.access:489 - 127.0.0.1:60672 - "GET /post/4/comment HTTP/1.1" 200
+2024-01-31 15:38:29.562z | INFO     | socialmediaapi.routers.post:40 - Creating comment
+2024-01-31 15:38:29.564z | INFO     | socialmediaapi.routers.post:14 - Finding post with id 4
+2024-01-31 15:38:29.566z | DEBUG    | socialmediaapi.routers.post:16 - SELECT posts.id, posts.body 
+FROM posts 
+WHERE posts.id = :id_1
+2024-01-31 15:38:29.571z | ERROR    | socialmediaapi.routers.post:44 - post with id 4 not found
+2024-01-31 15:38:29.574z | ERROR    | socialmediaapi.main:29 - HTTPException: 404 Post not found
+2024-01-31 15:38:29.576z | INFO     | uvicorn.access:489 - 127.0.0.1:60677 - "POST /comment HTTP/1.1" 500
+2024-01-31 15:38:29.579z | ERROR    | uvicorn.error:424 - Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 299, in app
+    raise e
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 294, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/socialmediaapi/routers/post.py", line 45, in create_comment
+    raise fastapi.HTTPException(status_code=404, detail="Post not found")
+fastapi.exceptions.HTTPException: 404: Post not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 419, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/.venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 75, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sionkim/Desktop/dev/FastAPI/socialmediaapi/socialmediaapi/main.py", line 30, in http_exception_handle_logging
+    return await fastapi.http_exception_handler(request, exec)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fastapi' has no attribute 'http_exception_handler'
+2024-01-31 15:39:06.611z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:39:06.717z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:39:06.721z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:39:06.723z | INFO     | uvicorn.error:87 - Finished server process [70333]
+2024-01-31 15:39:07.407z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:39:08.970z | INFO     | socialmediaapi.routers.post:40 - Creating comment
+2024-01-31 15:39:08.972z | INFO     | socialmediaapi.routers.post:14 - Finding post with id 4
+2024-01-31 15:39:08.976z | DEBUG    | socialmediaapi.routers.post:16 - SELECT posts.id, posts.body 
+FROM posts 
+WHERE posts.id = :id_1
+2024-01-31 15:39:08.984z | ERROR    | socialmediaapi.routers.post:44 - post with id 4 not found
+2024-01-31 15:39:08.986z | ERROR    | socialmediaapi.main:30 - HTTPException: 404 Post not found
+2024-01-31 15:39:08.989z | INFO     | uvicorn.access:489 - 127.0.0.1:60704 - "POST /comment HTTP/1.1" 404
+2024-01-31 15:39:35.906z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:39:36.014z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:39:36.016z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:39:36.017z | INFO     | uvicorn.error:87 - Finished server process [70658]
+2024-01-31 15:39:36.590z | INFO     | uvicorn.error:60 - Application startup complete.
+2024-01-31 15:42:21.832z | INFO     | uvicorn.error:265 - Shutting down
+2024-01-31 15:42:21.941z | INFO     | uvicorn.error:65 - Waiting for application shutdown.
+2024-01-31 15:42:21.945z | INFO     | uvicorn.error:76 - Application shutdown complete.
+2024-01-31 15:42:21.947z | INFO     | uvicorn.error:87 - Finished server process [70769]
+2024-01-31 15:46:49.612z | INFO     | [(-)] uvicorn.error:60 - Application startup complete.
+2024-01-31 15:47:00.964z | INFO     | [(78567405)] socialmediaapi.routers.post:32 - Getting all posts
+2024-01-31 15:47:00.966z | DEBUG    | [(78567405)] socialmediaapi.routers.post:34 - SELECT posts.id, posts.body 
+FROM posts
+2024-01-31 15:47:00.973z | INFO     | [(78567405)] uvicorn.access:489 - 127.0.0.1:61188 - "GET /post HTTP/1.1" 200
+2024-01-31 15:47:09.324z | INFO     | [(2ab25696)] socialmediaapi.routers.post:55 - Getting comments on post
+2024-01-31 15:47:09.327z | DEBUG    | [(2ab25696)] socialmediaapi.routers.post:57 - SELECT comments.id, comments.body, comments.post_id 
+FROM comments 
+WHERE comments.post_id = :post_id_1
+2024-01-31 15:47:09.335z | INFO     | [(2ab25696)] uvicorn.access:489 - 127.0.0.1:61195 - "GET /post/1/comment HTTP/1.1" 200
